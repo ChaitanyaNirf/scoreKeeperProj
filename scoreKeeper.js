@@ -8,6 +8,7 @@ let pointsP2 = 0;
 
 p1.addEventListener("click" , function(e){
     // console.log("Hey clicked ")
+    maxPoint.disabled=true;
     if( pointsP1 < (maxPoint.value - 1) && pointsP2 <= (maxPoint.value - 1) )
     {
     pointsP1 = pointsP1 + 1;
@@ -27,6 +28,7 @@ p1.addEventListener("click" , function(e){
 })
 p2.addEventListener("click" , function(e){
     // console.log("Hey clicked ")
+    maxPoint.disabled=true;
     if( pointsP1 <= (maxPoint.value - 1) && pointsP2 < (maxPoint.value - 1) )
     {
     pointsP2 = pointsP2 + 1;
@@ -49,4 +51,5 @@ reset.addEventListener("click" , function(e){
     score.innerText= `${pointsP1} - ${pointsP2}`;
     p1.disabled = false ;
     p2.disabled = false;
+    maxPoint.disabled = false;
 })
