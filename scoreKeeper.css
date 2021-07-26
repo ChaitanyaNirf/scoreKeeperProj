@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 20em; */
+    padding-top: 1em;
+    /* margin-left: 2em; */
+    border: solid  black 0.2em;
+    margin-right: 0em;
+    border-radius: 0.75em;
+}
+h1 {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3em;
+}
+
+.maxPointSelect {
+    margin: 1em;
+    border: rgb(0, 0, 0) solid 0.15em;
+    border-radius: 1.5em;
+    width: 20%;
+}
+
+.head{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+}
