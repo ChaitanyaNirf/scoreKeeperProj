@@ -1,55 +1,41 @@
-let p1 = document.querySelector('button#p1')
-let p2 = document.querySelector('button#p2')
-let reset = document.querySelector('button#reset')
-let score = document.querySelector('div.score')
-let maxPoint = document.querySelector('input.maxPointSelect')
-let pointsP1 = 0;
-let pointsP2 = 0;
+<!DOCTYPE html>
+<html lang="en">
 
-p1.addEventListener("click" , function(e){
-    // console.log("Hey clicked ")
-    maxPoint.disabled=true;
-    if( pointsP1 < (maxPoint.value - 1) && pointsP2 <= (maxPoint.value - 1) )
-    {
-    pointsP1 = pointsP1 + 1;
-    console.log(`P1: ${pointsP1}`);
-    score.innerText= `Score: ${pointsP1} - ${pointsP2}`;
-    }
-    else 
-    {
-        pointsP1 = pointsP1 + 1;
-        // console.log(`P1: ${pointsP1}`);
-        score.innerText= `${pointsP1} - ${pointsP2} Player 1 wins!!`;
-        // console.log("Player 1 wins");
-        p1.disabled = true ;
-        p2.disabled = true;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="scoreKeeper.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <title>ScoreKeeper</title>
+</head>
 
-})
-p2.addEventListener("click" , function(e){
-    // console.log("Hey clicked ")
-    maxPoint.disabled=true;
-    if( pointsP1 <= (maxPoint.value - 1) && pointsP2 < (maxPoint.value - 1) )
-    {
-    pointsP2 = pointsP2 + 1;
-    // console.log(`P2: ${pointsP2}`);
-    score.innerText= `Score: ${pointsP1} - ${pointsP2}`;
-    }
-    else 
-    {
-        pointsP2 = pointsP2 + 1;
-        // console.log(`P2: ${pointsP2}`);
-        score.innerText=`${pointsP1} - ${pointsP2} Player 2 wins!!`;
-        // console.log("Player 2 wins");
-        p1.disabled = true ;
-        p2.disabled = true;
-    }
-})
+<body>
+    <h1>Table Tennis Score Keeper</h1>
+    <div class="container">
+        <div class="card m-auto" style="width: 25em; height:25em;">
+            <img src="https://blog.playo.co/wp-content/uploads/2017/03/table-tennis-shots.jpg" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                <div class="head">Table-Tennis Score Keeper</div>
+                <div class="score">Score: 0 - 0</div>
+                <div class="maxpoint">
+                    Playing for <input type="number" class="maxPointSelect" min="1" value="5">
+                    <div class="buttons">
+                        <button class="btn btn-success" id="p1">+1 Player 1</button>
+                        <button id="p2" class="btn btn-danger">+1 Player 2</button>
+                        <button id="reset" class="btn btn-primary">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-reset.addEventListener("click" , function(e){
-    pointsP1 = pointsP2 = 0;
-    score.innerText= `${pointsP1} - ${pointsP2}`;
-    p1.disabled = false ;
-    p2.disabled = false;
-    maxPoint.disabled = false;
-})
+    <script src="scoreKeeper.js"></script>
+</body>
+
+</html>
